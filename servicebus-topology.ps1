@@ -18,8 +18,7 @@ az servicebus namespace create --name $servicebusnamespace --resource-group $res
 # Get the connection string
 $manageConnectionString = az servicebus namespace authorization-rule keys list --name RootManageSharedAccessKey --query primaryConnectionString --resource-group $resourcegroup --namespace $servicebusnamespace -o tsv
 
-# Create NServiceBus Endpoints
-
+# Create NServiceBus Endpoints and subscribe to messages.
 asb-transport queue create error -c $manageConnectionString
 asb-transport queue create audit -c $manageConnectionString
 
@@ -37,9 +36,5 @@ asb-transport endpoint subscribe $shippingendpoint DataModel.Commands.ShipOrder 
 asb-transport endpoint subscribe $shippingendpoint DataModel.Events.OrderPlaced -c $manageConnectionString
 asb-transport endpoint subscribe $shippingendpoint DataModel.Events.OrderBilled -c $manageConnectionString
 
-#asb-transport endpoint create $restapiendpoint -c $manageConnectionString
-
-# Subscribe to an endpoint
-#asb-transport endpoint subscribe dibrantestsb Cito.LasSync.Models.Messages.BrinReqMsg -c $manageConnectionString
-
+# Create a storage account
 az storage account create --name $storageaccount --resource-group $resourcegroup
