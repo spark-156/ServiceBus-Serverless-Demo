@@ -24,6 +24,15 @@ namespace Shipping
             config.UseSerialization<NewtonsoftSerializer>();
             config.EnableInstallers();
 
+            config.SendFailedMessagesTo("error");
+            config.AuditProcessedMessagesTo("audit");
+
+            var metrics = config.EnableMetrics();
+            metrics.SendMetricDataToServiceControl(
+                serviceControlMetricsAddress: "Particular.Monitoring",
+                interval: TimeSpan.FromSeconds(2)
+            );
+
             var persistence = config.UsePersistence<AzureTablePersistence>();
             persistence.ConnectionString(Configuration.GetConnectionString("StorageAccountConnectionString"));
 

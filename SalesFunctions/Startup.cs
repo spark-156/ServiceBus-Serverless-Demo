@@ -12,7 +12,20 @@ namespace SalesFunctions
     {
         public override void Configure(IFunctionsHostBuilder builder)
         {
-            builder.UseNServiceBus(() => new ServiceBusTriggeredEndpointConfiguration("RetailDemo.Sales", "ServiceBusConnectionString"));
+            builder.UseNServiceBus(() =>
+            {
+                var config = new ServiceBusTriggeredEndpointConfiguration("RetailDemo.Sales", "ServiceBusConnectionString");
+                config.AdvancedConfiguration.SendFailedMessagesTo("error");
+                config.AdvancedConfiguration.AuditProcessedMessagesTo("audit");
+
+                var metrics = config.AdvancedConfiguration.EnableMetrics();
+
+                metrics.SendMetricDataToServiceControl(
+                    serviceControlMetricsAddress: "Particular.Monitoring",
+                    interval: TimeSpan.FromSeconds(2)
+                );
+                return config;
+            });
             builder.Services.AddHttpClient();
         }
     }

@@ -25,7 +25,10 @@ namespace RestAPI
                     string connectionString = context.Configuration.GetConnectionString("ServiceBusConnectionString"); 
 
                     var config = new EndpointConfiguration("RetailDemo.RestAPI");
-                    config.AssemblyScanner();                    config.UseSerialization<NewtonsoftSerializer>();
+                    config.AssemblyScanner();
+                    config.UseSerialization<NewtonsoftSerializer>();
+                    config.SendFailedMessagesTo("error");
+                    config.AuditProcessedMessagesTo("audit");
 
                     var transport = config.UseTransport<AzureServiceBusTransport>();
                     transport.ConnectionString(connectionString);

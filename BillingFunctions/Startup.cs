@@ -11,7 +11,20 @@ namespace BillingFunctions
     {
         public override void Configure(IFunctionsHostBuilder builder)
         {
-            builder.UseNServiceBus(() => new ServiceBusTriggeredEndpointConfiguration("RetailDemo.Billing", "ServiceBusConnectionString"));
+            builder.UseNServiceBus(() =>
+            {
+                var config = new ServiceBusTriggeredEndpointConfiguration("RetailDemo.Billing", "ServiceBusConnectionString");
+                config.AdvancedConfiguration.SendFailedMessagesTo("error");
+                config.AdvancedConfiguration.AuditProcessedMessagesTo("audit");
+
+                var metrics = config.AdvancedConfiguration.EnableMetrics();
+
+                metrics.SendMetricDataToServiceControl(
+                    serviceControlMetricsAddress: "Particular.Monitoring",
+                    interval: TimeSpan.FromSeconds(2)
+                );
+                return config;
+            });
         }
     }
 }
