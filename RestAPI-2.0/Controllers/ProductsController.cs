@@ -45,7 +45,7 @@ public class ProductsController : ControllerBase
         
         Console.WriteLine(command.Product);
 
-        await _messageSender.Send(JsonConvert.SerializeObject(command));
+        await _messageSender.Send(command);
         
         return Ok();
     }
@@ -66,8 +66,8 @@ public class ProductsController : ControllerBase
             Buyer = buyer
         };
 
-        await _messageSender.Send(JsonConvert.SerializeObject(command));
-
+        await _messageSender.Send(command);
+        
         return Ok();
     }
 }
