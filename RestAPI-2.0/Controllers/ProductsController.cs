@@ -15,6 +15,8 @@ public class ProductsController : ControllerBase
         new Product() { Name = "Starship", Price = 9999999999, Manufacturer = "SpaceX" },
     };
 
+    private readonly MessageSender _messageSender = new MessageSender();
+
     public ProductsController()
     {
     }
@@ -42,7 +44,7 @@ public class ProductsController : ControllerBase
         
         Console.WriteLine(command.Product);
 
-        // TODO Send message to queue
+        await _messageSender.Send(command.ToString());
         
         return Ok();
     }
@@ -63,7 +65,7 @@ public class ProductsController : ControllerBase
             Buyer = buyer
         };
 
-        // TODO send message
+        await _messageSender.Send(command.ToString());
 
         return Ok();
     }
