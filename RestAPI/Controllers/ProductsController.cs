@@ -1,9 +1,9 @@
 using DataModel.Commands;
 using DataModel.Models;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
+using RestAPI.Services;
 
-namespace RestAPI_2._0.Controllers;
+namespace RestAPI.Controllers;
 
 [ApiController]
 [Route("[controller]")]
