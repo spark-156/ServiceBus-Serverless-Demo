@@ -2,7 +2,7 @@ using Azure.Messaging.ServiceBus;
 using System;
 using Newtonsoft.Json;
 
-namespace RestAPI_2._0;
+namespace RestAPI.Services;
 
 public class MessageSender : IMessageSender
 {

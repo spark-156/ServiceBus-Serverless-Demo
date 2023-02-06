@@ -1,4 +1,4 @@
-namespace RestAPI_2._0;
+namespace RestAPI.Services;
 
 public interface IMessageSender
 {
