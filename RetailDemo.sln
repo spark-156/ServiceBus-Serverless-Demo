@@ -18,6 +18,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesFunctions", "SalesFunc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BillingFunctions", "BillingFunctions\BillingFunctions.csproj", "{DB8DDFB7-F8A9-4E1D-8DFE-B1B8E774696B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestAPI-2.0", "RestAPI-2.0\RestAPI-2.0.csproj", "{2D37E7A9-59F3-4059-90FD-34ECDB1BE063}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +46,14 @@ Global
 		{DB8DDFB7-F8A9-4E1D-8DFE-B1B8E774696B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB8DDFB7-F8A9-4E1D-8DFE-B1B8E774696B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB8DDFB7-F8A9-4E1D-8DFE-B1B8E774696B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDFD5300-D20E-40F6-9FA6-03D8E2B974F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDFD5300-D20E-40F6-9FA6-03D8E2B974F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDFD5300-D20E-40F6-9FA6-03D8E2B974F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDFD5300-D20E-40F6-9FA6-03D8E2B974F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D37E7A9-59F3-4059-90FD-34ECDB1BE063}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D37E7A9-59F3-4059-90FD-34ECDB1BE063}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D37E7A9-59F3-4059-90FD-34ECDB1BE063}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D37E7A9-59F3-4059-90FD-34ECDB1BE063}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
