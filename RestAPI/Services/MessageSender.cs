@@ -12,10 +12,10 @@ public class MessageSender : IMessageSender
     public MessageSender()
     {
         const string connectionString = "<connection_string>";
-        const string queueName = "<queue_name>";
+        const string topicName = "<topic_name>";
 
         _client = new ServiceBusClient(connectionString);
-        _sender = _client.CreateSender(queueName);
+        _sender = _client.CreateSender(topicName);
     }
     
     public async Task Send(object message)
