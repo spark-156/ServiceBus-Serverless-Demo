@@ -1,6 +1,7 @@
 using DataModel.Commands;
 using DataModel.Models;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace RestAPI_2._0.Controllers;
 
@@ -44,7 +45,7 @@ public class ProductsController : ControllerBase
         
         Console.WriteLine(command.Product);
 
-        await _messageSender.Send(command.ToString());
+        await _messageSender.Send(JsonConvert.SerializeObject(command));
         
         return Ok();
     }
@@ -65,7 +66,7 @@ public class ProductsController : ControllerBase
             Buyer = buyer
         };
 
-        await _messageSender.Send(command.ToString());
+        await _messageSender.Send(JsonConvert.SerializeObject(command));
 
         return Ok();
     }
