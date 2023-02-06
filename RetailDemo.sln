@@ -10,15 +10,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		servicebus-topology.ps1 = servicebus-topology.ps1
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestAPI", "RestAPI\RestAPI.csproj", "{C2D7B7DF-9BB0-490E-8D05-C44BDE695390}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataModel", "DataModel\DataModel.csproj", "{C1BE470B-BF01-4D93-AA90-D3F5D0DD6D34}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesFunctions", "SalesFunctions\SalesFunctions.csproj", "{41F6A921-184D-4EB9-8397-523E802C961E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BillingFunctions", "BillingFunctions\BillingFunctions.csproj", "{DB8DDFB7-F8A9-4E1D-8DFE-B1B8E774696B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestAPI-2.0", "RestAPI-2.0\RestAPI-2.0.csproj", "{2D37E7A9-59F3-4059-90FD-34ECDB1BE063}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestAPI", "RestAPI\RestAPI.csproj", "{2D37E7A9-59F3-4059-90FD-34ECDB1BE063}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,10 +28,6 @@ Global
 		{EDFC132C-13C2-482A-959B-5015D5FE6AC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EDFC132C-13C2-482A-959B-5015D5FE6AC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EDFC132C-13C2-482A-959B-5015D5FE6AC8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C2D7B7DF-9BB0-490E-8D05-C44BDE695390}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C2D7B7DF-9BB0-490E-8D05-C44BDE695390}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C2D7B7DF-9BB0-490E-8D05-C44BDE695390}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C2D7B7DF-9BB0-490E-8D05-C44BDE695390}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C1BE470B-BF01-4D93-AA90-D3F5D0DD6D34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C1BE470B-BF01-4D93-AA90-D3F5D0DD6D34}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1BE470B-BF01-4D93-AA90-D3F5D0DD6D34}.Release|Any CPU.ActiveCfg = Release|Any CPU
