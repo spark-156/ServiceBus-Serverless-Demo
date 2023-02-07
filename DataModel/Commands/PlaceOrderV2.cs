@@ -6,7 +6,7 @@ using System.Text;
 
 namespace DataModel.Commands
 {
-    public class PlaceOrderV2 : ICommand
+    public class PlaceOrderV2
     {
         public string OrderId { get; set; }
         public Product Product { get; set; }

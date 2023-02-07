@@ -2,7 +2,7 @@
 
 namespace DataModel.Commands
 {
-    public class ShipOrder : ICommand
+    public class ShipOrder
     {
         public string OrderId { get; set; }
     }

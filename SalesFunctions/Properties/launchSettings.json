@@ -2,7 +2,8 @@
   "profiles": {
     "SalesFunctions": {
       "commandName": "Project",
-      "commandLineArgs": "host start --port 7073 --pause-on-error"
+      "commandLineArgs": "--port 7091",
+      "launchBrowser": false
     }
   }
 }

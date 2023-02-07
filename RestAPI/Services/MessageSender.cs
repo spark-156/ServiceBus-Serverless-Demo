@@ -9,10 +9,9 @@ public class MessageSender : IMessageSender
     private readonly ServiceBusClient _client;
     private readonly ServiceBusSender _sender;
     
-    public MessageSender()
+    public MessageSender(string topicName)
     {
-        const string connectionString = "<connection_string>";
-        const string topicName = "<topic_name>";
+        const string connectionString = "Endpoint=sb://servicebus-serverless-demo.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=np/LDqsORggdtWjY4yrOo8FDhgswnMyPyb1cAFOCUyQ=";
 
         _client = new ServiceBusClient(connectionString);
         _sender = _client.CreateSender(topicName);

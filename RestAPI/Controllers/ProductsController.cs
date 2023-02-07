@@ -16,7 +16,8 @@ public class ProductsController : ControllerBase
         new Product() { Name = "Starship", Price = 9999999999, Manufacturer = "SpaceX" },
     };
 
-    private readonly MessageSender _messageSender = new MessageSender();
+    private readonly MessageSender _messageSender = new MessageSender("placeorder");
+    private readonly MessageSender _messageSender2 = new MessageSender("placeorderv2");
 
     public ProductsController()
     {
@@ -66,7 +67,7 @@ public class ProductsController : ControllerBase
             Buyer = buyer
         };
 
-        await _messageSender.Send(command);
+        await _messageSender2.Send(command);
         
         return Ok();
     }
